@@ -1,11 +1,13 @@
 import '/styles/globals.css'
-import Layout from '../layout/Layout'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
+const queryClient = new QueryClient()
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
+    <QueryClientProvider client={queryClient}>
       <Component {...pageProps} />
-    </Layout>
+    </QueryClientProvider>
   )
 }
 
